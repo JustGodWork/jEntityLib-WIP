@@ -40,7 +40,6 @@ function GamePlayer:Constructor(data)
     if (type(data) == "table") then
 
         self.accounts = data.accounts;
-        self.coords = Vector3(data.coords.x, data.coords.y, data.coords.z);
         self.identifier = data.identifier;
         self.inventory = data.inventory;
         self.job = data.job;
