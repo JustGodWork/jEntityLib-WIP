@@ -61,7 +61,7 @@ function GamePlayer:Constructor(data)
     self.events = EventEmitter();
     self.vehicle = nil;
     jCLib.events:Trigger('playerCreated', self);
-    console.debug("Created ^7(^6Player^7) instance");
+    console.debug("^7(^3jEntityLib^7) ^0=> Created ^7(^6GamePlayer^7)^0 instance");
 
 end
 

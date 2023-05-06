@@ -14,7 +14,6 @@
 --]]
 
 ---@class GamePed: GameEntity
----@field handle number
 GamePed = Class.extends('GamePed', 'GameEntity');
 
 ---@param handle number

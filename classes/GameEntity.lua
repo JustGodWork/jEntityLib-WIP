@@ -14,6 +14,7 @@
 --]]
 
 ---@class GameEntity: BaseObject
+---@field public handle number
 ---@overload fun(handle: number): GameEntity
 GameEntity = Class.new 'GameEntity';
 
@@ -31,9 +32,9 @@ function GameEntity:IsValid()
     return DoesEntityExist(self:GetHandle());
 end
 
----@return number
+---@return Vector3
 function GameEntity:GetPosition()
-    return GetEntityCoords(self:GetHandle());
+    return Vector3(table.unpack(GetEntityCoords(self:GetHandle())));
 end
 
 ---@return number
@@ -61,14 +62,14 @@ function GameEntity:GetMaxSpeed()
     return GetEntityMaxSpeed(self:GetHandle());
 end
 
----@return number
+---@return Vector3
 function GameEntity:GetSpeedVector()
-    return GetEntitySpeedVector(self:GetHandle(), true);
+    return Vector3(table.unpack(GetEntitySpeedVector(self:GetHandle(), true)));
 end
 
----@return number
+---@return Vector3
 function GameEntity:GetVelocity()
-    return GetEntityVelocity(self:GetHandle());
+    return Vector3(table.unpack(GetEntityVelocity(self:GetHandle())));
 end
 
 ---@return number
@@ -91,14 +92,14 @@ function GameEntity:GetBoneIndexByName(boneName)
     return GetEntityBoneIndexByName(self:GetHandle(), boneName);
 end
 
----@return number
+---@return Vector3
 function GameEntity:GetBonePosition(boneIndex)
-    return GetWorldPositionOfEntityBone(self:GetHandle(), boneIndex);
+    return Vector3(table.unpack(GetWorldPositionOfEntityBone(self:GetHandle(), boneIndex)));
 end
 
----@return number
+---@return Vector3
 function GameEntity:GetBoneRotation(boneIndex)
-    return GetEntityBoneRotation(self:GetHandle(), boneIndex);
+    return Vector3(table.unpack(GetEntityBoneRotation(self:GetHandle(), boneIndex)));
 end
 
 ---@return number
