@@ -20,13 +20,13 @@ author 'JustGod';
 description 'jEntityLib - A simple library for FiveM to manage entities.';
 version '1.0.0';
 
-shared_script '@jClassLib/imports.lua';
+shared_script '@jClassLib/init.lua';
 
 files {
 
     'classes/**/*.lua',
-    'lib/**/*.lua',
-    'imports.lua'
+    'imports/**/*.lua',
+    'init.lua'
     
 };
 
