@@ -15,20 +15,19 @@
 
 ENV.name = GetCurrentResourceName();
 local lib = "jEntityLib";
+local link = "https://github.com/JustGodWork/jEntityLib-WIP";
 
 local state = GetResourceState(lib);
 
 local Errors = {
 
-    resource_missing = "^1Error: %s is missing^0",
+    resource_missing = "^1Error: %s is missing !^0 Download it at : ^7(^3%s^7)^0",
     resource_not_started = "^1Error: %s must be started before ^5%s^0"
 
 };
 
-local state = GetResourceState(lib);
-
 if (state == "missing") then
-    return error((Errors.resource_missing):format(lib), 3);
+    return error((Errors.resource_missing):format(lib, link), 3);
 end
 
 if (state ~= "started") then
@@ -37,10 +36,10 @@ end
 
 if (not ENV.IS_SERVER) then
 
-    ENV.require('lib/ESX.lua', lib);
     ENV.require('classes/GameEntity.lua', lib);
     ENV.require('classes/GamePed.lua', lib);
     ENV.require('classes/GamePlayer.lua', lib);
-    ENV.require('lib/events/CEventNetworkPlayerEnteredVehicle.lua', lib);
+    ENV.require('imports/ESX.lua', lib);
+    ENV.require('imports/events/CEventNetworkPlayerEnteredVehicle.lua', lib);
 
 end
